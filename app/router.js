@@ -8,9 +8,8 @@ const Router = Ember.Router.extend({
 
 Router.map(function() {
   this.route('credits');
-  this.route('movies', function() {
-    this.route('new');
-  });
+  this.route('movies');
+  this.route('movies.new', { path: '/movies/new' });
 });
 
 export default Router;
