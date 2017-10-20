@@ -1,35 +1,24 @@
-<h1 class="text-center">Find Movie Reviews listed here:</h1>
+<h1 class="text-center neontitle">Find Movie Reviews listed here:</h1>
 <br />
-<div class="container">
-  {{#each model as |movie|}}
-    <div class="col-xs-10 col-xs-offset-1 neon-box">
-      <p>I am movie ID {{movie.id}}</p>
-      <h2>{{movie.title}}</h2>
+{{#each model as |movie|}}
+  <div class="col-xs-10 col-xs-offset-1 neon-box">
+    <h2>{{movie.title}}</h2>
+    <br />
+    <div class="col-xs-5 col-xs-offset-1">
+      <h3><span class="glyphicon glyphicon-film"></span> Release Year: {{movie.release_year}}</h3>
+    </div>
+    <div class="col-xs-5 col-xs-offset-1">
+      <h3><span class="glyphicon glyphicon-film"></span> Rating: 
+      {{movie.rating}} <span class="glyphicon glyphicon-star"></span>
+      </h3>
     </div>
     <br />
-  {{/each}}
-</div>
-<h2 class="text-center neon-box">There should be movies listed above me.</h2>
+    <br />
+    <blockquote>{{movie.review}}</blockquote>
+  </div>
+  <br />
+{{/each}}
+
 {{!-- 
-  <div class="col-xs-10 col-xs-offset-1 neon-box">
-    <h2><%= link_to m.name, movie_path(m) %></h2><br />
-    
-      <div class="col-xs-5 col-xs-offset-1">
-        <h3><span class="glyphicon glyphicon-film"></span> Release Year: <%= m.release_year %></h3>
-      </div>
-      <div class="col-xs-5 col-xs-offset-1">
-        <h3><span class="glyphicon glyphicon-film"></span> Rating: 
-          <% m.rating.times do %>
-            <span class="glyphicon glyphicon-star"></span>
-          <% end %>
-          <% if m.rating < 5 %>
-            <% (5 - m.rating).times do %>
-              <span class="glyphicon glyphicon-star-empty"></span>
-            <% end %>
-          <% end %>
-        </h3>
-      </div>
-    <br />
-    <br />
-    <blockquote><%= m.review %></blockquote>
-  </div> --}}
+  <h2><%= link_to m.name, movie_path(m) %></h2>
+ --}}
