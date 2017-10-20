@@ -1,5 +1,11 @@
 {{top-nav}}
-<div class="container">
-  <p>This is in the application.hbs</p>
-  {{outlet}}
-</div>
+{{#if notice}}
+  <p class="alert alert-success">{{notice}}</p>
+{{/if}}
+
+{{#if alert}}
+  <p class="alert alert-danger">{{alert}}</p>
+{{/if}}
+
+<p>This is in the application.hbs</p>
+{{outlet}}
